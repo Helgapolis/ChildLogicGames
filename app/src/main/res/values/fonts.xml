@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Small -->
+    <dimen name="font_size_m9">5sp</dimen>
+    <dimen name="font_size_m8">6sp</dimen>
+    <dimen name="font_size_m7">7sp</dimen>
+    <dimen name="font_size_m6">8sp</dimen>
+    <dimen name="font_size_m5">9sp</dimen>
+    <dimen name="font_size_m4">10sp</dimen>
+    <dimen name="font_size_m3">11sp</dimen>
+    <dimen name="font_size_m2">12sp</dimen>
+    <dimen name="font_size_m1">13sp</dimen>
+
+    <!-- Normal -->
+    <dimen name="font_size_normal">14sp</dimen>
+
+    <!-- Large -->
+    <dimen name="font_size_p1">15sp</dimen>
+    <dimen name="font_size_p2">16sp</dimen>
+    <dimen name="font_size_p3">17sp</dimen>
+    <dimen name="font_size_p4">18sp</dimen>
+    <dimen name="font_size_p5">19sp</dimen>
+    <dimen name="font_size_p6">20sp</dimen>
+    <dimen name="font_size_p7">21sp</dimen>
+    <dimen name="font_size_p8">22sp</dimen>
+    <dimen name="font_size_p9">23sp</dimen>
+    <dimen name="font_size_p10">24sp</dimen>
+    <dimen name="font_size_p11">25sp</dimen>
+    <dimen name="font_size_p12">26sp</dimen>
+    <dimen name="font_size_p13">27sp</dimen>
+    <dimen name="font_size_p14">28sp</dimen>
+    <dimen name="font_size_p15">29sp</dimen>
+    <dimen name="font_size_p16">30sp</dimen>
+</resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/act_puzzle_content_lin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity">
+
+    <TextView
+        android:id="@+id/act_puzzle_expr_txt"
+        style="@style/text_view.single_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        android:padding="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/act_puzzle_cnt_lin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/act_puzzle_expr_txt"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/act_puzzle_btn_answ_1"
+                style="@style/button.transparent.single_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"/>
+
+            <Button
+                android:id="@+id/act_puzzle_btn_answ_2"
+                style="@style/button.transparent.single_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"/>
+
+            <Button
+                android:id="@+id/act_puzzle_btn_answ_3"
+                style="@style/button.transparent.single_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"/>
+
+            <Button
+                android:id="@+id/act_puzzle_btn_answ_4"
+                style="@style/button.transparent.single_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dip"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/act_puzzle_frm"
+            android:background="@color/bg_puzzle_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dip"/>
+    </LinearLayout>
+
+    <RelativeLayout android:id="@+id/act_puzzle_next_rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/act_puzzle_cnt_lin"
+        android:padding="20dip">
+
+        <TextView
+            android:id="@+id/good_result_title_txt"
+            style="@style/text_view.single_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/colorPrimary"/>
+
+        <Button
+            android:id="@+id/act_puzzle_btn_next"
+            style="@style/button.transparent.single_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_puzzle_btn_next"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:padding="10dip"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/act_puzzle_btn_cancel"
+        style="@style/button.transparent.single_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/act_puzzle_btn_cancel"
+        android:layout_below="@+id/act_puzzle_next_rel"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="30dip"/>
+</RelativeLayout>

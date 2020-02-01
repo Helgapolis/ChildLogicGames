@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <item name="bg_activity" type ="color">#ffffffff</item>
+    <item name="bg_puzzle_content" type="color">#fff6ffe6</item>
+
+    <item name="btn_right_answer_color" type="color">#ff96ffa7</item>
+    <item name="btn_fail_answer_color" type="color">#ffff666d</item>
+
+    <item name="txt_color" type="color">#000000</item>
+</resources>

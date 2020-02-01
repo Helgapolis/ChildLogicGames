@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="puzzle_size" type="integer">24</item>
+
+    <item name="puzzle_prefix_name" type="string">lionking</item>
+
+    <integer-array name="term_first">
+        <item>2</item>
+        <item>5</item>
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+    </integer-array>
+
+    <integer-array name="term_second">
+        <item>3</item>
+        <item>2</item>
+        <item>4</item>
+        <item>2</item>
+        <item>0</item>
+    </integer-array>
+</resources>

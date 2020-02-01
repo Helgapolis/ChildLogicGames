@@ -1,0 +1,10 @@
+<resources>
+
+    <string name="app_name">Логические игры для детей</string>
+
+    <string name="act_main_count_btn">Счет</string>
+    <!--  Puzzle activity -->
+    <string name="act_puzzle_btn_next">Следующее ></string>
+    <string name="act_puzzle_btn_cancel">Выйти</string>
+    <string name="act_puzzle_txt_clever_boy">Молодец, пазл собран!</string>
+</resources>
