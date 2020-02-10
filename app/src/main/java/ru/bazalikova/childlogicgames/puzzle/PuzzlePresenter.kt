@@ -1,8 +1,6 @@
 package ru.bazalikova.childlogicgames.puzzle
 
-import ru.bazalikova.childlogicgames.INavigation
-
-class PuzzlePresenter(private val view: IPuzzleView, private val repository: IPuzzleRepository, private val navigation: INavigation): IPuzzlePresenter
+class PuzzlePresenter(private val view: IPuzzleView, private val repository: IPuzzleRepository, private val navigation: IPuzzleNavigation): IPuzzlePresenter
 {
     private var step: Int = 0
 

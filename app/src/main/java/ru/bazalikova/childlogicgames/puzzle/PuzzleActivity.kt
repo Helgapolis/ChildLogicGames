@@ -3,10 +3,10 @@ package ru.bazalikova.childlogicgames.puzzle
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
-import ru.bazalikova.childlogicgames.INavigation
 import ru.bazalikova.childlogicgames.R
 
-class PuzzleActivity : AppCompatActivity(), INavigation
+class PuzzleActivity : AppCompatActivity(),
+    IPuzzleNavigation
 {
     private lateinit var presenter: IPuzzlePresenter
 
@@ -17,7 +17,7 @@ class PuzzleActivity : AppCompatActivity(), INavigation
         val contentView = LayoutInflater.from(this).inflate(R.layout.act_puzzle, null)
         setContentView(contentView)
 
-        val view = PuzzleView(contentView)
+        val view = contentView as PuzzleView
         val repository = PuzzleRepository(this)
         presenter = PuzzlePresenter(view, repository, this)
 

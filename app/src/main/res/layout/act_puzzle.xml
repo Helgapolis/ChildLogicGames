@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ru.bazalikova.childlogicgames.puzzle.PuzzleView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/act_puzzle_content_lin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_activity">
 
     <TextView
-        android:id="@+id/act_puzzle_expr_txt"
+        android:id="@+id/actPuzzleExprTxt"
         style="@style/text_view.single_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,11 +16,11 @@
         android:padding="10dp"/>
 
     <LinearLayout
-        android:id="@+id/act_puzzle_cnt_lin"
+        android:id="@+id/actPuzzleCntLin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/act_puzzle_expr_txt"
+        android:layout_below="@+id/actPuzzleExprTxt"
         android:layout_gravity="center">
 
         <LinearLayout
@@ -32,28 +33,28 @@
             android:padding="10dp">
 
             <Button
-                android:id="@+id/act_puzzle_btn_answ_1"
+                android:id="@+id/actPuzzleBtnAnsw1"
                 style="@style/button.transparent.single_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dip"/>
 
             <Button
-                android:id="@+id/act_puzzle_btn_answ_2"
+                android:id="@+id/actPuzzleBtnAnsw2"
                 style="@style/button.transparent.single_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dip"/>
 
             <Button
-                android:id="@+id/act_puzzle_btn_answ_3"
+                android:id="@+id/actPuzzleBtnAnsw3"
                 style="@style/button.transparent.single_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dip"/>
 
             <Button
-                android:id="@+id/act_puzzle_btn_answ_4"
+                android:id="@+id/actPuzzleBtnAnsw4"
                 style="@style/button.transparent.single_line"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -61,21 +62,21 @@
         </LinearLayout>
 
         <FrameLayout
-            android:id="@+id/act_puzzle_frm"
+            android:id="@+id/actPuzzleContentLayout"
             android:background="@color/bg_puzzle_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dip"/>
     </LinearLayout>
 
-    <RelativeLayout android:id="@+id/act_puzzle_next_rel"
+    <RelativeLayout android:id="@+id/actPuzzleNextRel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/act_puzzle_cnt_lin"
+        android:layout_below="@id/actPuzzleCntLin"
         android:padding="20dip">
 
         <TextView
-            android:id="@+id/good_result_title_txt"
+            android:id="@+id/actPuzzleGoodResultTextView"
             style="@style/text_view.single_line"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,7 +84,7 @@
             android:textColor="@color/colorPrimary"/>
 
         <Button
-            android:id="@+id/act_puzzle_btn_next"
+            android:id="@+id/actPuzzleNextButton"
             style="@style/button.transparent.single_line"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -95,13 +96,13 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/act_puzzle_btn_cancel"
+        android:id="@+id/actPuzzleCancelButton"
         style="@style/button.transparent.single_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/act_puzzle_btn_cancel"
-        android:layout_below="@+id/act_puzzle_next_rel"
+        android:layout_below="@+id/actPuzzleNextRel"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:padding="30dip"/>
-</RelativeLayout>
+</ru.bazalikova.childlogicgames.puzzle.PuzzleView>

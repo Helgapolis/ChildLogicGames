@@ -1,10 +1,7 @@
 package ru.bazalikova.childlogicgames
 
 import org.junit.Before
-import ru.bazalikova.childlogicgames.puzzle.IPuzzlePresenter
-import ru.bazalikova.childlogicgames.puzzle.IPuzzleRepository
-import ru.bazalikova.childlogicgames.puzzle.IPuzzleView
-import ru.bazalikova.childlogicgames.puzzle.PuzzlePresenter
+import ru.bazalikova.childlogicgames.puzzle.*
 
 annotation class Mock
 
@@ -17,7 +14,7 @@ class PuzzlePresenterTest
     lateinit var repository: IPuzzleRepository
 
     @Mock
-    lateinit var navigation: INavigation
+    lateinit var navigation: IPuzzleNavigation
 
     lateinit var presenter: IPuzzlePresenter
 

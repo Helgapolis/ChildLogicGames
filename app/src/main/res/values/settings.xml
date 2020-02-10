@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <integer name="act_menu_row_count">2</integer>
+    <integer name="act_menu_column_count">2</integer>
+
     <item name="puzzle_size" type="integer">24</item>
 
     <item name="puzzle_prefix_name" type="string">lionking</item>
