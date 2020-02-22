@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ru.bazalikova.childlogicgames.puzzle.PuzzleView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ru.bazalikova.childlogicgames.puzzle.PuzzleView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/act_puzzle_content_lin"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -69,7 +69,8 @@
             android:padding="15dip"/>
     </LinearLayout>
 
-    <RelativeLayout android:id="@+id/actPuzzleNextRel"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/actPuzzleNextLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/actPuzzleCntLin"
@@ -81,7 +82,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
         <Button
             android:id="@+id/actPuzzleNextButton"
@@ -92,16 +96,19 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:padding="10dip"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:visibility="gone"/>
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/actPuzzleCancelButton"
         style="@style/button.transparent.single_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/act_puzzle_btn_cancel"
-        android:layout_below="@+id/actPuzzleNextRel"
+        android:text="@string/btn_cancel"
+        android:layout_below="@+id/actPuzzleNextLayout"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:padding="30dip"/>

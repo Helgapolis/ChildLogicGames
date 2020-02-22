@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import ru.bazalikova.childlogicgames.R
 import ru.bazalikova.childlogicgames.puzzle.PuzzleActivity
+import ru.bazalikova.childlogicgames.tangram.TangramActivity
 
 class MenuActivity : AppCompatActivity(), IMenuNavigation
 {
@@ -36,6 +37,7 @@ class MenuActivity : AppCompatActivity(), IMenuNavigation
 
     override fun openTangram()
     {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val intent = Intent(this@MenuActivity, TangramActivity::class.java)
+        startActivity(intent)
     }
 }
