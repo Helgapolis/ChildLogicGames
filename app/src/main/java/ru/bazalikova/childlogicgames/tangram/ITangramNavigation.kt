@@ -1,6 +1,5 @@
 package ru.bazalikova.childlogicgames.tangram
 
-interface ITangramNavigation
-{
+interface ITangramNavigation {
     fun finish()
 }

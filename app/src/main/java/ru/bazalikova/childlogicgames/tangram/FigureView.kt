@@ -7,8 +7,11 @@ import android.util.AttributeSet
 import android.view.View
 import ru.bazalikova.childlogicgames.R
 
-abstract class FigureView @JvmOverloads constructor(context: Context?, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr)
-{
+abstract class FigureView @JvmOverloads constructor(
+    context: Context?,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0) : View(context, attrs, defStyleAttr) {
+
     protected val paint: Paint
     protected val strokePaint: Paint
     protected val path = Path()
@@ -17,8 +20,7 @@ abstract class FigureView @JvmOverloads constructor(context: Context?, attrs: At
 
     var isCovered: Boolean = false
 
-    init
-    {
+    init {
         strokePaint = Paint().apply {
             color = Color.BLACK
             strokeWidth = 2f
@@ -29,23 +31,21 @@ abstract class FigureView @JvmOverloads constructor(context: Context?, attrs: At
         val paintColor = typeArray?.getColor(R.styleable.FigureView_color, Color.TRANSPARENT)
         rotate = typeArray?.getFloat(R.styleable.FigureView_rotate, 0f) ?: 0f
 
-        paint = Paint().apply{
+        paint = Paint().apply {
             color = paintColor ?: Color.TRANSPARENT
         }
     }
 
-    override fun onDraw(canvas: Canvas?)
-    {
+    override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
 
         if (canvas == null) return
 
         drawPath()
 
-        if (rotate != 0f)
-        {
+        if (rotate != 0f) {
             matr.reset()
-            matr.setRotate(rotate, width/2f, height/2f)
+            matr.setRotate(rotate, width / 2f, height / 2f)
             path.transform(matr)
         }
 
@@ -55,8 +55,7 @@ abstract class FigureView @JvmOverloads constructor(context: Context?, attrs: At
 
     protected abstract fun drawPath()
 
-    fun startMergeAnimation(figureView: FigureView)
-    {
+    fun startMergeAnimation(figureView: FigureView) {
         val animator = ValueAnimator.ofFloat(this.rotate, figureView.rotate).apply {
             duration = 2000
             addUpdateListener {

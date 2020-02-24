@@ -1,7 +1,6 @@
 package ru.bazalikova.childlogicgames.tangram
 
-interface ITangramView
-{
+interface ITangramView {
     fun showHome()
     fun setGameOver()
 }

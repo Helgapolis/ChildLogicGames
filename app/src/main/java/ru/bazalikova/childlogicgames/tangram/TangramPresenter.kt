@@ -1,19 +1,16 @@
 package ru.bazalikova.childlogicgames.tangram
 
-class TangramPresenter(var view: ITangramView, private val navigation: ITangramNavigation): ITangramPresenter
-{
-    override fun onViewCreated()
-    {
+class TangramPresenter(var view: ITangramView, private val navigation: ITangramNavigation): TangramViewListener{
+
+    fun onViewCreated() {
         view.showHome()
     }
 
-    override fun onCancelBtnClicked()
-    {
+    fun onCancelBtnClicked() {
         navigation.finish()
     }
 
-    override fun onTangramBuild()
-    {
+    override fun onTangramBuild() {
         view.setGameOver()
     }
 }

@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import ru.bazalikova.childlogicgames.R
 
-class TangramActivity: AppCompatActivity(), ITangramNavigation
-{
-    lateinit var presenter: ITangramPresenter
+class TangramActivity : AppCompatActivity(), ITangramNavigation {
+    lateinit var presenter: TangramPresenter
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val contentView = LayoutInflater.from(this).inflate(R.layout.tangram_view, null)

@@ -1,37 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ru.bazalikova.childlogicgames.tangram.TangramView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ru.bazalikova.childlogicgames.tangram.TangramView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_activity">
 
-    <TextView android:id="@+id/tangramViewHeader"
+    <TextView
+        android:id="@+id/tangramViewHeaderTextView"
+        style="@style/text_view.single_line"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/text_view.single_line"
         android:layout_centerHorizontal="true"
-        android:textColor="@android:color/black"
-        android:padding="10dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-        android:text="@string/act_tangram_house_header"/>
+        android:padding="10dp"
+        android:text="@string/act_tangram_house_header"
+        android:textColor="@android:color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <FrameLayout android:id="@+id/tangramViewContainer"
-        android:layout_width="390dp"
+    <FrameLayout
+        android:id="@+id/tangramViewContainer"
+        android:layout_width="398dp"
         android:layout_height="360dp"
-        android:orientation="horizontal"
-        android:layout_centerInParent="true"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
         android:id="@+id/tangramViewGoodResultTextView"
         style="@style/text_view.single_line"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:textColor="@color/colorPrimary"
         android:visibility="gone"
-        android:layout_below="@+id/tangramViewContainer"/>
+        app:layout_constraintTop_toBottomOf="@+id/tangramViewContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/tangramViewCancelButton"
@@ -39,8 +46,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_cancel"
-        android:layout_below="@+id/tangramViewGoodResultTextView"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:padding="30dip"/>
+        android:padding="30dip"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tangramViewGoodResultTextView"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </ru.bazalikova.childlogicgames.tangram.TangramView>

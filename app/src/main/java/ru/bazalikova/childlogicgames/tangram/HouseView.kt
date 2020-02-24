@@ -16,8 +16,7 @@ class HouseView
 
     var listener: TangramViewListener? = null
 
-    fun setListeners()
-    {
+    fun setListeners() {
         val triangleList = listOf(partHouseRoofTriangle, partHouseWallTriangle)
         setTouchListener(triangleViewFirst, triangleList)
         setTouchListener(triangleViewSecond, triangleList)
@@ -33,8 +32,7 @@ class HouseView
         setTouchListener(smallTriangleViewSecond, smallTriangleList)
     }
 
-    private fun setTouchListener(figureView: FigureView, partHouseViews: List<FigureView>)
-    {
+    private fun setTouchListener(figureView: FigureView, partHouseViews: List<FigureView>) {
         val marginLayoutParams = figureView.layoutParams as? MarginLayoutParams ?: return
         val top = marginLayoutParams.topMargin
         val bottom = marginLayoutParams.bottomMargin
@@ -55,22 +53,23 @@ class HouseView
                 }
 
                 MotionEvent.ACTION_UP -> {
-                    for (partHouseView in partHouseViews)
-                    {
+                    for (partHouseView in partHouseViews) {
                         val triangleViewRect = Rect()
                         view.getHitRect(triangleViewRect)
                         val partHouseViewRect = Rect()
                         partHouseView.getHitRect(partHouseViewRect)
 
-                        if (isRectFit(triangleViewRect, partHouseViewRect) && !partHouseView.isCovered)
-                        {
+                        if (isRectFit(
+                                triangleViewRect,
+                                partHouseViewRect
+                            ) && !partHouseView.isCovered
+                        ) {
                             figureView.layoutParams = partHouseView.layoutParams
                             figureView.setOnTouchListener(null)
                             figureView.startMergeAnimation(partHouseView)
                             partHouseView.isCovered = true
 
-                            if (isHouseBuild())
-                            {
+                            if (isHouseBuild()) {
                                 listener?.onTangramBuild()
                             }
 
@@ -104,15 +103,19 @@ class HouseView
         }
     }
 
-    private fun isHouseBuild(): Boolean
-    {
-        val houseParts = listOf(partHouseParallelogram, partHouseRoofTriangle, partHouseSquare, partHouseWallMiddleTriangle, partHouseWallSmallTriangleFirst,
-            partHouseWallSmallTriangleSecond, partHouseWallTriangle)
+    private fun isHouseBuild(): Boolean {
+        val houseParts = listOf(
+            partHouseParallelogram,
+            partHouseRoofTriangle,
+            partHouseSquare,
+            partHouseWallMiddleTriangle,
+            partHouseWallSmallTriangleFirst,
+            partHouseWallSmallTriangleSecond,
+            partHouseWallTriangle
+        )
 
-        for (partHouse in houseParts)
-        {
-            if (!partHouse.isCovered)
-            {
+        for (partHouse in houseParts) {
+            if (!partHouse.isCovered) {
                 return false
             }
         }
@@ -120,8 +123,7 @@ class HouseView
         return true
     }
 
-    private fun isRectFit(rect1: Rect, rect2: Rect): Boolean
-    {
+    private fun isRectFit(rect1: Rect, rect2: Rect): Boolean {
         val diff = 20
         return rect1.centerX() + diff >= rect2.centerX() &&
                 rect1.centerX() - diff <= rect2.centerX() &&

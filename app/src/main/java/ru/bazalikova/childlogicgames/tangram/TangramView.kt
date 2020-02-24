@@ -1,30 +1,32 @@
 package ru.bazalikova.childlogicgames.tangram
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.RelativeLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.tangram_view.view.*
 import ru.bazalikova.childlogicgames.R
 
 class TangramView
-@kotlin.jvm.JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
-    : RelativeLayout(context, attrs, defStyleAttr), ITangramView
-{
-    private lateinit var presenter: ITangramPresenter
+@kotlin.jvm.JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : ConstraintLayout(context, attrs, defStyleAttr), ITangramView {
+    private lateinit var presenter: TangramPresenter
 
-    fun onFinishInflate(presenter: ITangramPresenter)
-    {
+    fun onFinishInflate(presenter: TangramPresenter) {
         this.presenter = presenter
 
-        tangramViewCancelButton.setOnClickListener{
+        tangramViewCancelButton.setOnClickListener {
             presenter.onCancelBtnClicked()
         }
     }
 
-    override fun showHome()
-    {
+    @SuppressLint("InflateParams")
+    override fun showHome() {
         tangramViewContainer.removeAllViews()
         val view = LayoutInflater.from(context).inflate(R.layout.house_view, null)
         tangramViewContainer.addView(view)
@@ -34,9 +36,9 @@ class TangramView
         houseView.setListeners()
     }
 
-    override fun setGameOver()
-    {
+    override fun setGameOver() {
         tangramViewGoodResultTextView.visibility = View.VISIBLE
-        tangramViewGoodResultTextView.text = rootView.context.getString(R.string.act_tangram_txt_clever_boy)
+        tangramViewGoodResultTextView.text =
+            rootView.context.getString(R.string.act_tangram_txt_clever_boy)
     }
 }

@@ -1,6 +1,5 @@
 package ru.bazalikova.childlogicgames.tangram
 
-interface TangramViewListener
-{
+interface TangramViewListener {
     fun onTangramBuild()
 }

@@ -6,33 +6,29 @@ import androidx.appcompat.app.AppCompatActivity
 import ru.bazalikova.childlogicgames.R
 
 class PuzzleActivity : AppCompatActivity(),
-    IPuzzleNavigation
-{
-    private lateinit var presenter: IPuzzlePresenter
+    IPuzzleNavigation {
+    private lateinit var presenter: PuzzlePresenter
 
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val contentView = LayoutInflater.from(this).inflate(R.layout.act_puzzle, null)
+        val contentView = LayoutInflater.from(this).inflate(R.layout.activity_puzzle, null)
         setContentView(contentView)
 
         val view = contentView as PuzzleView
-        val repository = PuzzleRepository(this)
+        val repository = PuzzleModel(this)
         presenter = PuzzlePresenter(view, repository, this)
 
         view.onFinishInflate(presenter)
         presenter.onViewCreated()
     }
 
-    override fun onStart()
-    {
+    override fun onStart() {
         super.onStart()
         presenter.onStart()
     }
 
-    override fun onStop()
-    {
+    override fun onStop() {
         super.onStop()
         presenter.onStop()
     }

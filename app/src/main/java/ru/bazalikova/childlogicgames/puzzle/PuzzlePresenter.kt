@@ -1,83 +1,67 @@
 package ru.bazalikova.childlogicgames.puzzle
 
-class PuzzlePresenter(private val view: IPuzzleView, private val repository: IPuzzleRepository, private val navigation: IPuzzleNavigation): IPuzzlePresenter
-{
-    private var step: Int = 0
+class PuzzlePresenter(
+    private val view: IPuzzleView,
+    private val model: IPuzzleModel,
+    private val navigation: IPuzzleNavigation) {
 
-    override fun onViewCreated()
-    {
-        for (i in 0 until repository.puzzleCount())
-        {
-            val drawableId: Int = repository.puzzleResId(i)
+    fun onViewCreated() {
+        for (i in 0 until model.puzzleCount()) {
+            val drawableId: Int = model.puzzleResId(i)
             view.addPuzzleView(drawableId)
         }
 
         showExample()
     }
 
-    private fun showExample()
-    {
-        val expression = repository.getExpression(step)
-        val answers = repository.getAnswers(step)
+    private fun showExample() {
+        val expression = model.getExpression()
+        val answers = model.getAnswers()
         view.setExample(expression, answers.map { it.toString() })
     }
 
-    override fun onStart()
-    {
+    fun onStart() {
         /* do nothing */
     }
 
-    override fun onStop()
-    {
+    fun onStop() {
         /* do nothing */
     }
 
-    override fun onAnswerBtnClicked(btnIndex: Int, answer: String)
-    {
-        for (btn in 0 until repository.getAnswersSize())
-        {
+    fun onAnswerBtnClicked(btnIndex: Int, answer: String) {
+        for (btn in 0 until model.getAnswersSize()) {
             view.setAnswerBtnType(btn, IPuzzleView.AnswerType.UKNOWN)
         }
 
-        val result = repository.checkAnswer(step, answer)
+        val result = model.checkAnswer(answer)
 
-        if (result)
-        {
+        if (result) {
             view.setAnswerBtnType(btnIndex, IPuzzleView.AnswerType.RIGHT)
             view.showPuzzles(answer.toInt())
 
-            val examplesSize = repository.getExamplesSize()
-            if (step == examplesSize - 1)
-            {
+            if (model.isLastStep()) {
                 view.setGameOver()
-            }
-            else
-            {
+            } else {
                 view.setNextButton(true)
             }
-        }
-        else
-        {
+        } else {
             view.setAnswerBtnType(btnIndex, IPuzzleView.AnswerType.INCORRECT)
         }
     }
 
-    override fun onNextBtnClicked()
-    {
-        step += 1
+    fun onNextBtnClicked() {
+        model.setNextStep()
 
         view.setNextButton(false)
 
-        for (btnIndex in 0 until repository.getAnswersSize())
-        {
+        for (btnIndex in 0 until model.getAnswersSize()) {
             view.setAnswerBtnType(btnIndex, IPuzzleView.AnswerType.UKNOWN)
         }
 
         showExample()
     }
 
-    override fun onCancelBtnClicked()
-    {
+    fun onCancelBtnClicked() {
         navigation.finish()
     }
 }

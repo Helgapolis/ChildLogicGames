@@ -1,7 +1,6 @@
 package ru.bazalikova.childlogicgames.menu
 
-interface IMenuNavigation
-{
+interface IMenuNavigation {
     fun openCounting()
     fun openFifteen()
     fun openTangram()

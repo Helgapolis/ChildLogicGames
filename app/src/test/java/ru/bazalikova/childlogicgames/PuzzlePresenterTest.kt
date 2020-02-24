@@ -11,17 +11,17 @@ class PuzzlePresenterTest
     lateinit var view: IPuzzleView
 
     @Mock
-    lateinit var repository: IPuzzleRepository
+    lateinit var model: IPuzzleModel
 
     @Mock
     lateinit var navigation: IPuzzleNavigation
 
-    lateinit var presenter: IPuzzlePresenter
+    lateinit var presenter: PuzzlePresenter
 
     @Before
     fun setUp()
     {
-        presenter = PuzzlePresenter(view, repository, navigation)
+        presenter = PuzzlePresenter(view, model, navigation)
     }
 
     /*@Test

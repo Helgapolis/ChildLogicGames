@@ -1,6 +1,5 @@
 package ru.bazalikova.childlogicgames.puzzle
 
-interface IPuzzleNavigation
-{
+interface IPuzzleNavigation {
     fun finish()
 }

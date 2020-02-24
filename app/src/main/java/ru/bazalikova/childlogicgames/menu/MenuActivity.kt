@@ -8,35 +8,30 @@ import ru.bazalikova.childlogicgames.R
 import ru.bazalikova.childlogicgames.puzzle.PuzzleActivity
 import ru.bazalikova.childlogicgames.tangram.TangramActivity
 
-class MenuActivity : AppCompatActivity(), IMenuNavigation
-{
-    override fun onCreate(savedInstanceState: Bundle?)
-    {
+class MenuActivity : AppCompatActivity(), IMenuNavigation {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val contentView = LayoutInflater.from(this).inflate(R.layout.act_menu,null)
+        val contentView = LayoutInflater.from(this).inflate(R.layout.activity_menu, null)
         setContentView(contentView)
 
         val view = contentView as MenuView
-        val repository = MenuRepository(this)
+        val repository = MenuModel(this)
         val presenter = MenuPresenter(view, repository, this)
 
         view.onFinishInflate(presenter)
         presenter.onViewCreated()
     }
 
-    override fun openCounting()
-    {
+    override fun openCounting() {
         val intent = Intent(this@MenuActivity, PuzzleActivity::class.java)
         startActivity(intent)
     }
 
-    override fun openFifteen()
-    {
+    override fun openFifteen() {
         //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun openTangram()
-    {
+    override fun openTangram() {
         val intent = Intent(this@MenuActivity, TangramActivity::class.java)
         startActivity(intent)
     }
