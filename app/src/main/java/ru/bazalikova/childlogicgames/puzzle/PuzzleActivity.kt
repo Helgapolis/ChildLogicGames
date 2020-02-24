@@ -1,5 +1,6 @@
 package ru.bazalikova.childlogicgames.puzzle
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ class PuzzleActivity : AppCompatActivity(),
     IPuzzleNavigation {
     private lateinit var presenter: PuzzlePresenter
 
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

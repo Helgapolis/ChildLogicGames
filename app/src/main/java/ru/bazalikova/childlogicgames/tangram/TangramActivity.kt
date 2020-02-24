@@ -1,5 +1,6 @@
 package ru.bazalikova.childlogicgames.tangram
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +9,7 @@ import ru.bazalikova.childlogicgames.R
 class TangramActivity : AppCompatActivity(), ITangramNavigation {
     lateinit var presenter: TangramPresenter
 
+    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
