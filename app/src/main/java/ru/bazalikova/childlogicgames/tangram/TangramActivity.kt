@@ -1,19 +1,17 @@
 package ru.bazalikova.childlogicgames.tangram
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import ru.bazalikova.childlogicgames.R
 
 class TangramActivity : AppCompatActivity(), ITangramNavigation {
     lateinit var presenter: TangramPresenter
 
-    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val contentView = LayoutInflater.from(this).inflate(R.layout.tangram_view, null)
+        val contentView = View.inflate(this, R.layout.tangram_view, null)
         setContentView(contentView)
 
         val view = contentView as TangramView

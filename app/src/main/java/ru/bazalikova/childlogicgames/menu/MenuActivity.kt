@@ -1,9 +1,8 @@
 package ru.bazalikova.childlogicgames.menu
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import ru.bazalikova.childlogicgames.R
 import ru.bazalikova.childlogicgames.puzzle.PuzzleActivity
@@ -11,10 +10,9 @@ import ru.bazalikova.childlogicgames.tangram.TangramActivity
 
 class MenuActivity : AppCompatActivity(), IMenuNavigation {
 
-    @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val contentView = LayoutInflater.from(this).inflate(R.layout.activity_menu, null)
+        val contentView = View.inflate(this, R.layout.activity_menu, null)
         setContentView(contentView)
 
         val view = contentView as MenuView
