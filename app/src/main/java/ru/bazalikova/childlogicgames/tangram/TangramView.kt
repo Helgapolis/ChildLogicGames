@@ -1,9 +1,7 @@
 package ru.bazalikova.childlogicgames.tangram
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
-import android.view.LayoutInflater
 import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.tangram_view.view.*
@@ -25,10 +23,10 @@ class TangramView
         }
     }
 
-    @SuppressLint("InflateParams")
     override fun showHome() {
         tangramViewContainer.removeAllViews()
-        val view = LayoutInflater.from(context).inflate(R.layout.house_view, null)
+
+        val view = View.inflate(context, R.layout.house_view, null)
         tangramViewContainer.addView(view)
 
         val houseView = view as? HouseView ?: return
