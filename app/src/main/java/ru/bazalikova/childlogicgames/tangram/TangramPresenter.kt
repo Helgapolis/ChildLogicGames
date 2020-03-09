@@ -1,16 +1,41 @@
 package ru.bazalikova.childlogicgames.tangram
 
-class TangramPresenter(var view: ITangramView, private val navigation: ITangramNavigation): TangramViewListener{
+import javax.inject.Inject
+
+class TangramPresenter @Inject constructor(): TangramViewListener{
+
+    private var view: ITangramView? = null
+    private var navigation: ITangramNavigation? = null
+
+    fun attachView(view: ITangramView)
+    {
+        this.view = view
+    }
+
+    fun detachView()
+    {
+        this.view = null
+    }
+
+    fun attachNavigation(navigation: ITangramNavigation)
+    {
+        this.navigation = navigation
+    }
+
+    fun detachNavigation()
+    {
+        this.navigation = null
+    }
 
     fun onViewCreated() {
-        view.showHome()
+        view?.showHome()
     }
 
     fun onCancelBtnClicked() {
-        navigation.finish()
+        navigation?.finish()
     }
 
     override fun onTangramBuild() {
-        view.setGameOver()
+        view?.setGameOver()
     }
 }

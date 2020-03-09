@@ -1,12 +1,34 @@
 package ru.bazalikova.childlogicgames.menu
 
-class MenuPresenter(
-    private val view: IMenuView,
-    private val model: IMenuModel,
-    private val navigation: IMenuNavigation) {
+import javax.inject.Inject
+
+class MenuPresenter @Inject constructor(private val model: IMenuModel) {
+
+    private var view: IMenuView? = null
+    private var navigation: IMenuNavigation? = null
+
+    fun attachView(view: IMenuView)
+    {
+        this.view = view
+    }
+
+    fun detachView()
+    {
+        this.view = null
+    }
+
+    fun attachNavigation(navigation: IMenuNavigation)
+    {
+        this.navigation = navigation
+    }
+
+    fun detachNavigation()
+    {
+        this.navigation = null
+    }
 
     fun onViewCreated() {
-        view.setMenuItems(
+        view?.setMenuItems(
             model.getMenuItems(),
             model.getRowCount(),
             model.getColumnCount()
@@ -15,9 +37,9 @@ class MenuPresenter(
 
     fun onMenuBtnClicked(btnType: MenuType) {
         when (btnType) {
-            MenuType.COUNTING -> navigation.openCounting()
-            MenuType.FIFTEEN -> navigation.openFifteen()
-            MenuType.TANGRAM -> navigation.openTangram()
+            MenuType.COUNTING -> navigation?.openCounting()
+            MenuType.FIFTEEN -> navigation?.openFifteen()
+            MenuType.TANGRAM -> navigation?.openTangram()
         }
     }
 }

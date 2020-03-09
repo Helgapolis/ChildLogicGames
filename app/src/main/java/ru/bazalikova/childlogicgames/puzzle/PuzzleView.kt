@@ -11,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat.getColor
 import kotlinx.android.synthetic.main.activity_puzzle.view.*
 import ru.bazalikova.childlogicgames.R
+import javax.inject.Inject
 import kotlin.random.Random
 
 class PuzzleView
@@ -19,7 +20,8 @@ class PuzzleView
     private val hiddenPuzzles: MutableList<ImageView> = mutableListOf()
     private lateinit var answersBtn: List<Button>
 
-    private lateinit var presenter: PuzzlePresenter
+    @Inject
+    lateinit var presenter: PuzzlePresenter
 
     fun onFinishInflate(presenter: PuzzlePresenter) {
         this.presenter = presenter

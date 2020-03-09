@@ -3,6 +3,7 @@
     package="ru.bazalikova.childlogicgames">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"

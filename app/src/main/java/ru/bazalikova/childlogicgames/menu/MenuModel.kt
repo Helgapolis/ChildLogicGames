@@ -2,8 +2,9 @@ package ru.bazalikova.childlogicgames.menu
 
 import android.content.Context
 import ru.bazalikova.childlogicgames.R
+import javax.inject.Inject
 
-class MenuModel(context: Context) : IMenuModel {
+class MenuModel @Inject constructor(context: Context) : IMenuModel {
     private val menuItems: List<MenuItem> =
         listOf(
             MenuItem(context.getString(R.string.act_menu_count_btn), MenuType.COUNTING),

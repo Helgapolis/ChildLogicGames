@@ -3,9 +3,10 @@ package ru.bazalikova.childlogicgames.puzzle
 import android.content.Context
 import ru.bazalikova.childlogicgames.R
 import java.util.*
+import javax.inject.Inject
 import kotlin.collections.ArrayList
 
-class PuzzleModel(private val context: Context) : IPuzzleModel {
+class PuzzleModel @Inject constructor(private val context: Context) : IPuzzleModel {
 
     private val termFirstArray: IntArray = context.resources.getIntArray(R.array.term_first)
     private val termSecondArray: IntArray = context.resources.getIntArray(R.array.term_second)

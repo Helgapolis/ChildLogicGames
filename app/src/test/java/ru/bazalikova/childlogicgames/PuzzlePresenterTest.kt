@@ -21,7 +21,7 @@ class PuzzlePresenterTest
     @Before
     fun setUp()
     {
-        presenter = PuzzlePresenter(view, model, navigation)
+        presenter = PuzzlePresenter(model)
     }
 
     /*@Test
