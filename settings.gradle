@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':sources:core_api', ':sources:tangram', 'sources:puzzle', 'sources:menu'
 rootProject.name='Child Logic Games'

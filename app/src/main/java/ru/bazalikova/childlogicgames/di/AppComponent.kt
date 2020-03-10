@@ -3,11 +3,12 @@ package ru.bazalikova.childlogicgames.di
 import android.content.Context
 import dagger.Component
 import ru.bazalikova.childlogicgames.App
+import ru.bazalikova.coreapi.mediator.ProvidersFacade
 import javax.inject.Singleton
 
 @Component(modules = [AppModule::class])
 @Singleton
-interface AppComponent {
+interface AppComponent:ProvidersFacade {
 
     companion object {
 
@@ -17,8 +18,6 @@ interface AppComponent {
                 .build()
         }
     }
-
-    fun getContext(): Context
 
     fun inject(ap: App)
 }

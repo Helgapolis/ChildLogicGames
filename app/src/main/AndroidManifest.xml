@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".menu.MenuActivity"
+            android:name="ru.bazalikova.menu.presentation.MenuActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,11 +23,11 @@
         </activity>
 
         <activity
-            android:name=".puzzle.PuzzleActivity"
+            android:name="ru.bazalikova.puzzle.presentation.PuzzleActivity"
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".tangram.TangramActivity"
+            android:name="ru.bazalikova.tangram.presentation.TangramActivity"
             android:screenOrientation="portrait" />
     </application>
 </manifest>

@@ -2,17 +2,5 @@
 
     <string name="app_name">Логические игры для детей</string>
 
-    <string name="act_menu_count_btn">Счет</string>
-    <string name="act_menu_fifteen">Пятнашки</string>
-    <string name="act_menu_tangram">Танграм</string>
-
     <string name="btn_cancel">Выйти</string>
-
-    <!--  Puzzle activity -->
-    <string name="act_puzzle_btn_next">Следующее ></string>
-    <string name="act_puzzle_txt_clever_boy">Молодец, пазл собран!</string>
-
-    <!-- Tangram activity -->
-    <string name="act_tangram_house_header">Собери домик из фигур</string>
-    <string name="act_tangram_txt_clever_boy">Умничка, дом собран!</string>
 </resources>

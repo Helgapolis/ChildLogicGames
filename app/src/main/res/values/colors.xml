@@ -6,19 +6,4 @@
     <color name="colorAccent">#D81B60</color>
 
     <item name="bg_activity" type ="color">#ffffffff</item>
-    <item name="bg_puzzle_content" type="color">#fff6ffe6</item>
-
-    <item name="bg_tangram_content" type="color">#A066CCFF</item>
-
-    <item name="btn_right_answer_color" type="color">#ff96ffa7</item>
-    <item name="btn_fail_answer_color" type="color">#ffff666d</item>
-
-    <item name="txt_color" type="color">#000000</item>
-
-    <item name="green" type="color">@android:color/holo_green_light</item>
-    <item name="red" type="color">@android:color/holo_red_light</item>
-    <item name="yellow" type="color">#FFEB3B</item>
-    <item name="orange" type="color">#FFC107</item>
-    <item name="blue" type="color">@android:color/holo_blue_light</item>
-    <item name="magenta" type="color">#ff00ff</item>
 </resources>
