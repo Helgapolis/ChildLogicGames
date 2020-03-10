@@ -66,7 +66,7 @@ class HouseView
                         ) {
                             figureView.layoutParams = partHouseView.layoutParams
                             figureView.setOnTouchListener(null)
-                            figureView.startMergeAnimation(partHouseView)
+                            figureView.startRotateAnimation(partHouseView.rotate)
                             partHouseView.isCovered = true
 
                             if (isHouseBuild()) {
