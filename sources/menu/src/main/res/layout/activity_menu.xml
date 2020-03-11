@@ -1,14 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ru.bazalikova.menu.presentation.MenuView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ru.bazalikova.menu.presentation.MenuView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ru.bazalikova.menu.presentation.MenuActivity">
 
-    <TableLayout android:id="@+id/actMenuTableLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp"
-        android:gravity="center"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/content_padding">
+
+        <ImageButton
+            android:id="@+id/activityPuzzleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingTop="@dimen/content_padding"
+            android:src="@drawable/img_counting"
+            tools:ignore="ContentDescription,MissingConstraints" />
+
+        <TextView android:id="@+id/activityPuzzleText"
+            style="@style/text_view.single_line.menu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_menu_count_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityPuzzleButton"
+            android:paddingBottom="@dimen/content_padding"/>
+
+        <ImageButton
+            android:id="@+id/activityTangramButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityPuzzleText"
+            android:paddingTop="@dimen/content_padding"
+            android:src="@drawable/img_tangram"
+            tools:ignore="ContentDescription,MissingConstraints"/>
+
+        <TextView android:id="@+id/activityTangramText"
+            style="@style/text_view.single_line.menu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_menu_tangram"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityTangramButton"
+            android:paddingBottom="@dimen/content_padding"/>
+
+        <ImageButton
+            android:id="@+id/activityFifteenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityTangramText"
+            android:paddingTop="@dimen/content_padding"
+            android:src="@drawable/img_fifteen"
+            tools:ignore="ContentDescription,MissingConstraints" />
+
+        <TextView android:id="@+id/activityFifteenText"
+            style="@style/text_view.single_line.menu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_menu_fifteen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/activityFifteenButton"
+            android:paddingBottom="@dimen/content_padding"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ru.bazalikova.menu.presentation.MenuView>

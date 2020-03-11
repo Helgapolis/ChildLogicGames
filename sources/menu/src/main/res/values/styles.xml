@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="text_view.single_line.menu_item">
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/font_size_p14</item>
+        <item name="android:textColor">@color/magenta</item>
+    </style>
+</resources>

@@ -1,11 +1,10 @@
 package ru.bazalikova.menu.presentation
 
-import ru.bazalikova.menu.data.IMenuModel
 import ru.bazalikova.menu.IMenuMediator
 import ru.bazalikova.menu.data.MenuType
 import javax.inject.Inject
 
-class MenuPresenter @Inject constructor(private val model: IMenuModel) {
+class MenuPresenter @Inject constructor() {
 
     private var view: IMenuView? = null
     private var mediator: IMenuMediator? = null
@@ -28,14 +27,6 @@ class MenuPresenter @Inject constructor(private val model: IMenuModel) {
     fun detachMediator()
     {
         this.mediator = null
-    }
-
-    fun onViewCreated() {
-        view?.setMenuItems(
-            model.getMenuItems(),
-            model.getRowCount(),
-            model.getColumnCount()
-        )
     }
 
     fun onMenuBtnClicked(btnType: MenuType) {
