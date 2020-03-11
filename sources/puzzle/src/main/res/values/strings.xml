@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Puzzle activity -->
+    <string name="act_puzzle_btn_next">Следующее ></string>
+    <string name="act_puzzle_txt_clever_boy">Молодец, пазл собран!</string>
+</resources>

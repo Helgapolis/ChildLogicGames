@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tangram activity -->
+    <string name="act_tangram_house_header">Собери домик из фигур</string>
+    <string name="act_tangram_txt_clever_boy">Умничка, дом собран!</string>
+</resources>

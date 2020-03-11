@@ -14,8 +14,4 @@
 
     <dimen name="drawable_padding">5dip</dimen>
     <dimen name="drawable_padding_twice">10dip</dimen>
-
-    <!-- Common -->
-    <integer name="duration">300</integer>
-    <integer name="vibrate_level">20</integer>
 </resources>
