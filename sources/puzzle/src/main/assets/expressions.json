@@ -1,0 +1,97 @@
+{
+    "lessons": [
+      {
+        "prefix_name": "lionking",
+        "puzzle_size": 24,
+        "samples": [
+          {
+            "sample": "2 + 3 = ?",
+            "answers": [4, 5, 6, 7],
+            "answer": 5
+          },
+          {
+            "sample": "4 + 2 = ?",
+            "answers": [6, 7, 8, 9],
+            "answer": 6
+          },
+          {
+            "sample": "2 + 4 = ?",
+            "answers": [5, 6, 7, 8],
+            "answer": 6
+          },
+          {
+            "sample": "1 + 2 = ?",
+            "answers": [1, 2, 3, 4],
+            "answer": 3
+          },
+          {
+            "sample": "2 + 2 = ?",
+            "answers": [1, 2, 3, 4],
+            "answer": 4
+          }
+        ]
+      },
+      {
+        "prefix_name": "masha",
+        "puzzle_size": 30,
+        "samples": [
+          {
+            "sample": "5 + 3 = ?",
+            "answers": [6, 7, 8, 10],
+            "answer": 8
+          },
+          {
+            "sample": "6 + 4 = ?",
+            "answers": [7, 8, 9, 10],
+            "answer": 10
+          },
+          {
+            "sample": "3 + 5 = ?",
+            "answers": [7, 8, 9, 10],
+            "answer": 8
+          },
+          {
+            "sample": "7 - 3 = ?",
+            "answers": [4, 5, 6, 7],
+            "answer": 4
+          }
+        ]
+      },
+      {
+        "prefix_name": "smeshariki",
+        "puzzle_size": 35,
+        "samples": [
+          {
+            "sample": "4 + 3 = ?",
+            "answers": [6, 7, 8, 10],
+            "answer": 7
+          },
+          {
+            "sample": "8 - 4 = ?",
+            "answers": [2, 3, 4, 5],
+            "answer": 4
+          },
+          {
+            "sample": "4 + 4 = ?",
+            "answers": [7, 8, 9, 10],
+            "answer": 8
+          },
+          {
+            "sample": "9 - 3 = ?",
+            "answers": [4, 5, 6, 7],
+            "answer": 6
+          },
+          {
+            "sample": "5 - 3 = ?",
+            "answers": [2, 3, 4, 5],
+            "answer": 2
+          },
+          {
+            "sample": "2 + 6 = ?",
+            "answers": [6, 7, 8, 9],
+            "answer": 8
+          }
+        ]
+      }
+    ]
+}

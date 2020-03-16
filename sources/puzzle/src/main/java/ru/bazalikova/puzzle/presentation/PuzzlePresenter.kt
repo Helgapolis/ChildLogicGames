@@ -1,10 +1,10 @@
 package ru.bazalikova.puzzle.presentation
 
 import ru.bazalikova.puzzle.IPuzzleMediator
-import ru.bazalikova.puzzle.data.IPuzzleModel
+import ru.bazalikova.puzzle.data.IPuzzleRepository
 import javax.inject.Inject
 
-class PuzzlePresenter @Inject constructor(private val model: IPuzzleModel) {
+class PuzzlePresenter @Inject constructor(private val repository: IPuzzleRepository) {
 
     private var view: IPuzzleView? = null
     private var mediator: IPuzzleMediator? = null
@@ -30,17 +30,14 @@ class PuzzlePresenter @Inject constructor(private val model: IPuzzleModel) {
     }
 
     fun onViewCreated() {
-        for (i in 0 until model.puzzleCount()) {
-            val drawableId: Int = model.puzzleResId(i)
-            view?.addPuzzleView(drawableId)
-        }
-
+        repository.buildLessons()
+        view?.addPuzzleViews(repository.puzzlePrefix(), repository.puzzleCount())
         showExample()
     }
 
     private fun showExample() {
-        val expression = model.getExpression()
-        val answers = model.getAnswers()
+        val expression = repository.getExpression()
+        val answers = repository.getAnswers()
         view?.setExample(expression, answers.map { it.toString() })
     }
 
@@ -53,20 +50,25 @@ class PuzzlePresenter @Inject constructor(private val model: IPuzzleModel) {
     }
 
     fun onAnswerBtnClicked(btnIndex: Int, answer: String) {
-        for (btn in 0 until model.getAnswersSize()) {
+        for (btn in 0 until repository.getAnswersSize()) {
             view?.setAnswerBtnType(btn, IPuzzleView.AnswerType.UKNOWN)
         }
 
-        val result = model.checkAnswer(answer)
+        val result = repository.checkAnswer(answer)
 
         if (result) {
             view?.setAnswerBtnType(btnIndex, IPuzzleView.AnswerType.RIGHT)
             view?.showPuzzles(answer.toInt())
 
-            if (model.isLastStep()) {
-                view?.setGameOver()
+            if (repository.isLastSample()) {
+                view?.setGameOver(true)
+
+                if (repository.hasNextLesson())
+                {
+                    view?.setNextButton(true)
+                }
             } else {
-                view?.setNextButton(true)
+                view?.showCorrectAnswerAnimation(action = Runnable { onNextBtnClicked() })
             }
         } else {
             view?.setAnswerBtnType(btnIndex, IPuzzleView.AnswerType.INCORRECT)
@@ -74,11 +76,18 @@ class PuzzlePresenter @Inject constructor(private val model: IPuzzleModel) {
     }
 
     fun onNextBtnClicked() {
-        model.setNextStep()
+        if (repository.isLastSample()) {
+            repository.setNextLesson()
+            view?.setGameOver(false)
+            view?.addPuzzleViews(repository.puzzlePrefix(), repository.puzzleCount())
+        }
+        else {
+            repository.setNextStep()
+        }
 
         view?.setNextButton(false)
 
-        for (btnIndex in 0 until model.getAnswersSize()) {
+        for (btnIndex in 0 until repository.getAnswersSize()) {
             view?.setAnswerBtnType(btnIndex, IPuzzleView.AnswerType.UKNOWN)
         }
 
