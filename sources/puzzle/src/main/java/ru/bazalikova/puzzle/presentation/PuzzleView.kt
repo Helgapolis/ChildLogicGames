@@ -1,6 +1,7 @@
 package ru.bazalikova.puzzle.presentation
 
 import android.content.Context
+import android.os.Handler
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
@@ -43,7 +44,22 @@ class PuzzleView
         }
     }
 
-    override fun addPuzzleView(imageId: Int) {
+    override fun addPuzzleViews(imagePrefix: String, puzzleSize: Int) {
+        actPuzzleContentLayout.removeAllViews()
+        hiddenPuzzles.clear()
+
+        for (puzzleIndex in 0 until puzzleSize) {
+            val drawableId = context.resources.getIdentifier(
+                imagePrefix + puzzleIndex.toString(),
+                "drawable",
+                context.packageName
+            )
+
+            addPuzzleView(drawableId)
+        }
+    }
+
+    private fun addPuzzleView(imageId: Int) {
         val imageView = ImageView(rootView.context)
         imageView.layoutParams = FrameLayout.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
@@ -96,11 +112,20 @@ class PuzzleView
         }
     }
 
+    override fun showCorrectAnswerAnimation(action: Runnable) {
+        Handler().postDelayed(action, 200) //TODO: animation will be here
+    }
+
     override fun setNextButton(visibility: Boolean) {
         actPuzzleNextButton.visibility = if (visibility) View.VISIBLE else View.GONE
     }
 
     override fun showPuzzles(answer: Int) {
+        if (hiddenPuzzles.size < answer)
+        {
+            return
+        }
+
         for (puzzleIndex in 0 until answer) {
             val puzzleView = hiddenPuzzles[Random.nextInt(0, hiddenPuzzles.size)]
             puzzleView.visibility = View.VISIBLE
@@ -108,9 +133,7 @@ class PuzzleView
         }
     }
 
-    override fun setGameOver() {
-        actPuzzleGoodResultTextView.visibility = View.VISIBLE
-        actPuzzleGoodResultTextView.text =
-            rootView.context.getString(R.string.act_puzzle_txt_clever_boy)
+    override fun setGameOver(visibility: Boolean) {
+        actPuzzleGoodResultTextView.visibility = if (visibility) View.VISIBLE else View.GONE
     }
 }
