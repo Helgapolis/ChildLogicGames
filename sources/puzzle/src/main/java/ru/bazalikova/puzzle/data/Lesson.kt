@@ -7,5 +7,6 @@ class Lesson {
     lateinit var prefixName: String
     @SerializedName("puzzle_size")
     var puzzleSize: Int = 0
+    @SerializedName("samples")
     lateinit var samples: List<Sample>
 }
