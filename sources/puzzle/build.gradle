@@ -29,6 +29,7 @@ android {
         }
     }
 
+    testOptions{ unitTests.includeAndroidResources = true }
 }
 
 dependencies {
@@ -43,6 +44,9 @@ dependencies {
     implementation "com.google.dagger:dagger:$dagger_version"
 
     implementation 'com.google.code.gson:gson:2.8.5'
+
+    // Robolectric
+    testImplementation "org.robolectric:robolectric:3.3.2"
 
     api project(':sources:core_api')
 }
