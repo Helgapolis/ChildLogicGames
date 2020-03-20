@@ -28,5 +28,9 @@
         <activity
             android:name="ru.bazalikova.tangram.presentation.TangramActivity"
             android:screenOrientation="portrait" />
+
+        <activity
+            android:name="ru.bazalikova.fifteen.presentation.FifteenActivity"
+            android:screenOrientation="portrait" />
     </application>
 </manifest>

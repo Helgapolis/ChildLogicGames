@@ -36,7 +36,5 @@ class TangramView
 
     override fun setGameOver() {
         tangramViewGoodResultTextView.visibility = View.VISIBLE
-        tangramViewGoodResultTextView.text =
-            rootView.context.getString(R.string.act_tangram_txt_clever_boy)
     }
 }
