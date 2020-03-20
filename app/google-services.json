@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "991200758269",
+    "firebase_url": "https://childlogicgames.firebaseio.com",
+    "project_id": "childlogicgames",
+    "storage_bucket": "childlogicgames.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991200758269:android:05c884e93fa765a3643194",
+        "android_client_info": {
+          "package_name": "ru.bazalikova.childlogicgames"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991200758269-ajl4m2p4ca50pv7ftg7sk0imcg9ht7k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmaVtrJhVwuc-ZObnJTJ7R13HNpYinkhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991200758269-ajl4m2p4ca50pv7ftg7sk0imcg9ht7k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
