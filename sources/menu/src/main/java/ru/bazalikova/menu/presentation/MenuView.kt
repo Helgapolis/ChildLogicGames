@@ -28,5 +28,13 @@ class MenuView(context: Context, attrs: AttributeSet? = null) : ConstraintLayout
         activityTangramText.setOnClickListener{
             presenter.onMenuBtnClicked(MenuType.TANGRAM)
         }
+
+        activityFifteenButton.setOnClickListener{
+            presenter.onMenuBtnClicked(MenuType.FIFTEEN)
+        }
+
+        activityTangramText.setOnClickListener{
+            presenter.onMenuBtnClicked(MenuType.FIFTEEN)
+        }
     }
 }

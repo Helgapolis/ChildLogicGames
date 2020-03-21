@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import ru.bazalikova.fifteen.presentation.FifteenActivity
 import ru.bazalikova.menu.IMenuMediator
 import ru.bazalikova.menu.R
 import ru.bazalikova.menu.di.MenuComponent
@@ -37,7 +38,8 @@ class MenuActivity : AppCompatActivity(), IMenuMediator {
     }
 
     override fun openFifteen() {
-        //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val intent = Intent(this@MenuActivity, FifteenActivity::class.java)
+        startActivity(intent)
     }
 
     override fun openTangram() {

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  Fifteen activity -->
+    <string name="act_fifteen_header">Собери цифры в порядке возрастания, используя свободное пространство</string>
+    <string name="act_fifteen_txt_clever_boy">Молодец, последовательность восстановлена!</string>
+    <string name="act_fifteen_btn_repeat">Повторим?</string>
+</resources>

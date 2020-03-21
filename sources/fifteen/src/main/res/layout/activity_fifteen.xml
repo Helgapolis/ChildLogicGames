@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.bazalikova.fifteen.presentation.FifteenView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/actFifteenContentLin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_activity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/actFifteenHeaderTextView"
+                style="@style/text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/content_margin"
+                android:layout_marginBottom="@dimen/content_margin"
+                android:padding="@dimen/content_padding"
+                android:text="@string/act_fifteen_header"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TableLayout
+                android:id="@+id/actFifteenFieldLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actFifteenHeaderTextView" />
+
+            <TextView
+                android:id="@+id/actFifteenGoodResultTextView"
+                style="@style/text_view.double_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/act_fifteen_txt_clever_boy"
+                android:textColor="@color/colorPrimary"
+                android:padding="@dimen/content_padding"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actFifteenFieldLayout" />
+
+            <Button
+                android:id="@+id/actFifteenRepeatButton"
+                style="@style/button.transparent.single_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_padding"
+                android:text="@string/act_fifteen_btn_repeat"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/actFifteenCancelButton"
+                app:layout_constraintTop_toBottomOf="@+id/actFifteenGoodResultTextView" />
+
+            <Button
+                android:id="@+id/actFifteenCancelButton"
+                style="@style/button.transparent.single_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/content_padding"
+                android:text="@string/btn_cancel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actFifteenGoodResultTextView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</ru.bazalikova.fifteen.presentation.FifteenView>
