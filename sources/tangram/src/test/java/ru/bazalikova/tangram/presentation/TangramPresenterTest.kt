@@ -1,6 +1,5 @@
 package ru.bazalikova.tangram.presentation
 
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
@@ -18,13 +17,9 @@ class TangramPresenterTest {
 
     private lateinit var presenter: TangramPresenter
 
-    @Before
-    fun setUp() {
-        presenter = TangramPresenter()
-    }
-
     @Test
-    fun onViewCreated() {
+    fun `should show home view after view is created`() {
+        presenter = TangramPresenter()
         presenter.attachView(view)
         presenter.onViewCreated()
 
@@ -32,11 +27,13 @@ class TangramPresenterTest {
     }
 
     @Test
-    fun onTangramBuild() {
+    fun `should show game over after tangram is built`() {
+        presenter = TangramPresenter()
         presenter.attachView(view)
         presenter.onViewCreated()
 
         presenter.onTangramBuild()
+
         Mockito.verify(view).setGameOver()
     }
 }

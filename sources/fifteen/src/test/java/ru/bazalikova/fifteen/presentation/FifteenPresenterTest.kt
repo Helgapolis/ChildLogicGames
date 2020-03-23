@@ -1,6 +1,5 @@
 package ru.bazalikova.fifteen.presentation
 
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
@@ -8,7 +7,7 @@ import org.mockito.Mockito
 import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoRule
 import ru.bazalikova.fifteen.data.Cell
-import ru.bazalikova.fifteen.data.FifteenField
+import ru.bazalikova.fifteen.data.FifteenFieldHelper
 import ru.bazalikova.fifteen.data.Game
 
 class FifteenPresenterTest {
@@ -19,18 +18,14 @@ class FifteenPresenterTest {
     @Mock
     lateinit var view: IFifteenView
 
-    lateinit var game: Game
+    private lateinit var game: Game
 
-    lateinit var  presenter: FifteenPresenter
-
-    @Before
-    fun setUp() {
-        game = Game()
-        presenter = FifteenPresenter(game)
-    }
+    private lateinit var  presenter: FifteenPresenter
 
     @Test
-    fun onViewCreated() {
+    fun `field should be set after view is created`() {
+        game = Game()
+        presenter = FifteenPresenter(game)
         presenter.attachView(view)
         presenter.onViewCreated()
 
@@ -38,36 +33,55 @@ class FifteenPresenterTest {
     }
 
     @Test
-    fun move() {
+    fun `move second field to new position - and check that field is updated`() {
+        game = Game()
+        presenter = FifteenPresenter(game)
         presenter.attachView(view)
         presenter.onViewCreated()
 
-        val field = FifteenField(3, 3)
-        field[0, 0] = 7; field[0, 1] = 1; field[0, 2] = 0
-        field[1, 0] = 6; field[1, 1] = 2; field[1, 2] = 4
-        field[2, 0] = 8; field[2, 1] = 3; field[2, 2] = 5
+        game.field = FifteenFieldHelper.testFifteenField()
 
-        game.field = field
         presenter.move(Cell(0, 1))
 
         Mockito.verify(view).setField(game.field)
     }
 
     @Test
-    fun onRepeatButtonClick() {
+    fun `click on repeat button - and check that repeat button came invisible`() {
+        game = Game()
+        presenter = FifteenPresenter(game)
         presenter.attachView(view)
         presenter.onViewCreated()
+        game.field = FifteenFieldHelper.sortedFifteenField()
 
-        val field = FifteenField(3, 3)
-        field[0, 0] = 1; field[0, 1] = 2; field[0, 2] = 3
-        field[1, 0] = 4; field[1, 1] = 5; field[1, 2] = 6
-        field[2, 0] = 7; field[2, 1] = 8; field[2, 2] = 0
-
-        game.field = field
         presenter.onRepeatButtonClick()
 
         Mockito.verify(view).setRepeatButton(false)
+    }
+
+    @Test
+    fun `click on repeat button - and check that game over button came invisible`() {
+        game = Game()
+        presenter = FifteenPresenter(game)
+        presenter.attachView(view)
+        presenter.onViewCreated()
+        game.field = FifteenFieldHelper.sortedFifteenField()
+
+        presenter.onRepeatButtonClick()
+
         Mockito.verify(view).setGameOver(false)
+    }
+
+    @Test
+    fun `click on repeat button - and check that field is updated`() {
+        game = Game()
+        presenter = FifteenPresenter(game)
+        presenter.attachView(view)
+        presenter.onViewCreated()
+        game.field = FifteenFieldHelper.sortedFifteenField()
+
+        presenter.onRepeatButtonClick()
+
         Mockito.verify(view).setField(game.field)
     }
 }

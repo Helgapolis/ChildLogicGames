@@ -1,6 +1,5 @@
 package ru.bazalikova.menu.presentation
 
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
@@ -20,14 +19,11 @@ class MenuPresenterTest {
 
     private lateinit var presenter: MenuPresenter
 
-    @Before
-    fun setUp() {
-        presenter = MenuPresenter()
-    }
-
     @Test
     fun `should be open counting`() {
+        presenter = MenuPresenter()
         presenter.attachMediator(mediator)
+
         presenter.onMenuBtnClicked(MenuType.COUNTING)
 
         Mockito.verify(mediator).openCounting()
@@ -35,7 +31,9 @@ class MenuPresenterTest {
 
     @Test
     fun `should be open tangram`() {
+        presenter = MenuPresenter()
         presenter.attachMediator(mediator)
+
         presenter.onMenuBtnClicked(MenuType.TANGRAM)
 
         Mockito.verify(mediator).openTangram()
@@ -43,7 +41,9 @@ class MenuPresenterTest {
 
     @Test
     fun `should be open fifteen`() {
+        presenter = MenuPresenter()
         presenter.attachMediator(mediator)
+
         presenter.onMenuBtnClicked(MenuType.FIFTEEN)
 
         Mockito.verify(mediator).openFifteen()

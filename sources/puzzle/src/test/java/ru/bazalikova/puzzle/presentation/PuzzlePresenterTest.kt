@@ -1,6 +1,5 @@
 package ru.bazalikova.puzzle.presentation
 
-import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
@@ -22,33 +21,41 @@ class PuzzlePresenterTest {
 
     private lateinit var  presenter: PuzzlePresenter
 
-    @Before
-    fun setUp() {
-        presenter = PuzzlePresenter(repository)
-    }
-
     @Test
-    fun onViewCreated() {
+    fun `puzzle views should be set after view is created`() {
+        presenter = PuzzlePresenter(repository)
         presenter.attachView(view)
 
         val expectedPrefix = "test"
         val expectedCount = 24
 
-        val expectedException = "2 + 2 = ?"
-        val answers = listOf(4, 5, 6, 7)
-
         Mockito.`when`(repository.puzzlePrefix()).thenReturn(expectedPrefix)
         Mockito.`when`(repository.puzzleCount()).thenReturn(expectedCount)
-        Mockito.`when`(repository.getExpression()).thenReturn(expectedException)
-        Mockito.`when`(repository.getAnswers()).thenReturn(answers)
 
         presenter.onViewCreated()
+
         Mockito.verify(view).addPuzzleViews(expectedPrefix, expectedCount)
-        Mockito.verify(view).setExample(expectedException, answers.map { it.toString() })
     }
 
     @Test
-    fun `should show right answer by onAnswerBtnClick`() {
+    fun `should show example after view is created`() {
+        presenter = PuzzlePresenter(repository)
+        presenter.attachView(view)
+
+        val expectedExpression = "2 + 2 = ?"
+        val answers = listOf(4, 5, 6, 7)
+
+        Mockito.`when`(repository.getExpression()).thenReturn(expectedExpression)
+        Mockito.`when`(repository.getAnswers()).thenReturn(answers)
+
+        presenter.onViewCreated()
+
+        Mockito.verify(view).setExample(expectedExpression, answers.map { it.toString() })
+    }
+
+    @Test
+    fun `should show right answer by click on answer button`() {
+        presenter = PuzzlePresenter(repository)
         presenter.attachView(view)
 
         Mockito.`when`(repository.checkAnswer(Mockito.anyString())).thenReturn(true)
@@ -57,12 +64,15 @@ class PuzzlePresenterTest {
         val expectedBtnIndex = 0
 
         presenter.onViewCreated()
+
         presenter.onAnswerBtnClicked(expectedBtnIndex, expectedAnswer)
+
         Mockito.verify(view).setAnswerBtnType(expectedBtnIndex, IPuzzleView.AnswerType.RIGHT)
     }
 
     @Test
-    fun `should show incorrect answer by onAnswerBtnClick`() {
+    fun `should show incorrect answer by click on answer button`() {
+        presenter = PuzzlePresenter(repository)
         presenter.attachView(view)
 
         Mockito.`when`(repository.checkAnswer(Mockito.anyString())).thenReturn(false)
@@ -71,16 +81,20 @@ class PuzzlePresenterTest {
         val expectedBtnIndex = 2
 
         presenter.onViewCreated()
+
         presenter.onAnswerBtnClicked(expectedBtnIndex, expectedAnswer)
+
         Mockito.verify(view).setAnswerBtnType(expectedBtnIndex, IPuzzleView.AnswerType.INCORRECT)
     }
 
     @Test
-    fun onNextBtnClicked() {
+    fun `click on next button - and check that next button came invisible`() {
+        presenter = PuzzlePresenter(repository)
         presenter.attachView(view)
-
         presenter.onViewCreated()
+
         presenter.onNextBtnClicked()
+
         Mockito.verify(view).setNextButton(false)
     }
 }
