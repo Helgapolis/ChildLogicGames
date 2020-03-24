@@ -1,6 +1,8 @@
 package ru.bazalikova.fifteen.data
 
-class Game {
+import javax.inject.Inject
+
+class Game @Inject constructor() {
     companion object{
         const val fieldCount = 3
     }
@@ -8,7 +10,7 @@ class Game {
     var field = FifteenField(fieldCount, fieldCount)
 
     fun build(): FifteenField {
-        for (fieldIndex in 0..fieldCount*fieldCount - 2){
+        for (fieldIndex in 0 until fieldCount*fieldCount){
             field[fieldIndex % fieldCount, fieldIndex / fieldCount] = 0
         }
 
