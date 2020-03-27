@@ -3,6 +3,9 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+import ru.bazalikova.mygradle.PipelinePlugin
+apply plugin: PipelinePlugin
+
 ext {
     dagger_version = '2.17'
 }
@@ -36,6 +39,7 @@ android {
         ignoreTestSources true
         abortOnError false
         ignoreWarnings false
+        htmlReport false
         xmlReport true
         checkDependencies true
         baselineFile file("lint-baseline.xml")
