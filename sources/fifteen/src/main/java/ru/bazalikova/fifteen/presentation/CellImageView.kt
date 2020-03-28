@@ -3,10 +3,10 @@ package ru.bazalikova.fifteen.presentation
 import android.content.Context
 import android.util.AttributeSet
 import android.view.MotionEvent
-import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
 import ru.bazalikova.fifteen.data.Cell
 
-class CellImageView(context: Context, attrs: AttributeSet? = null, defStyleAttrs: Int = 0) : ImageView(context, attrs, defStyleAttrs) {
+class CellImageView(context: Context, attrs: AttributeSet? = null, defStyleAttrs: Int = 0) : AppCompatImageView(context, attrs, defStyleAttrs) {
 
     var clickListener: ClickListener? = null
 
