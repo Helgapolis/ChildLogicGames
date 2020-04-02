@@ -1,9 +1,9 @@
 FROM gradle:5.4.1-jdk8
 
-ENV SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-3859397.zip" \
+ENV SDK_URL="https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip" \
     ANDROID_HOME="/usr/local/android-sdk" \
-    ANDROID_VERSION=28 \
-    ANDROID_BUILD_TOOLS_VERSION=28.0.3
+    ANDROID_VERSION=29 \
+    ANDROID_BUILD_TOOLS_VERSION=29.0.2
 
 RUN mkdir "$ANDROID_HOME" .android \
     && cd "$ANDROID_HOME" \
@@ -18,3 +18,5 @@ RUN $ANDROID_HOME/tools/bin/sdkmanager --update
 RUN $ANDROID_HOME/tools/bin/sdkmanager "build-tools;${ANDROID_BUILD_TOOLS_VERSION}" \
     "platforms;android-${ANDROID_VERSION}" \
     "platform-tools"
+
+RUN yes | $ANDROID_HOME/tools/bin/sdkmanager --licenses
