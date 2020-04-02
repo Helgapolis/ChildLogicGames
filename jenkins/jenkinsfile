@@ -1,0 +1,23 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('init') {
+         steps {
+            checkout([
+                $class: 'GitSCM',
+                branches: [[name: '*/jenkins'], [name: '*/develop'], [name: '*/master']],
+                doGenerateSubmoduleConfigurations: false,
+                extensions: [[$class: 'CleanCheckout']],
+                submoduleCfg: [],
+                userRemoteConfigs: [[url: 'https://github.com/Helgapolis/ChildLogicGames/']]
+                ])
+         }
+      }
+      stage("check_code") {
+          steps{
+              sh './gradlew check_code'
+          }
+      }
+   }
+}
