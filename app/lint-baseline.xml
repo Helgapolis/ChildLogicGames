@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="5" by="lint 3.5.3" client="gradle" variant="all" version="3.5.3">
+
+    <issue
+        id="GradleDependency"
+        message="Old buildToolsVersion 29.0.2; recommended version is 29.0.3 or later"
+        errorLine1="    buildToolsVersion &quot;29.0.2&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="Old buildToolsVersion 29.0.2; recommended version is 29.0.3 or later"
+        errorLine1="    buildToolsVersion &quot;29.0.2&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="Old buildToolsVersion 29.0.2; recommended version is 29.0.3 or later"
+        errorLine1="    buildToolsVersion &quot;29.0.2&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="Old buildToolsVersion 29.0.2; recommended version is 29.0.3 or later"
+        errorLine1="    buildToolsVersion &quot;29.0.2&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="Old buildToolsVersion 29.0.2; recommended version is 29.0.3 or later"
+        errorLine1="    buildToolsVersion &quot;29.0.2&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="12"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="Old buildToolsVersion 29.0.2; recommended version is 29.0.3 or later"
+        errorLine1="    buildToolsVersion &quot;29.0.2&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="17"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-analytics than 17.2.3 is available: 17.3.0"
+        errorLine1="    implementation &apos;com.google.firebase:firebase-analytics:17.2.3&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="69"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.google.firebase:firebase-crashlytics than 17.0.0-beta02 is available: 17.0.0-beta03"
+        errorLine1="    implementation &apos;com.google.firebase:firebase-crashlytics:17.0.0-beta02&apos;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="70"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/bg_activity` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        errorLine1="    android:background=&quot;@color/bg_activity&quot;>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/fifteen/src/main/res/layout/activity_fifteen.xml"
+            line="8"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/bg_puzzle_content` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        errorLine1="    android:background=&quot;@color/bg_puzzle_content&quot;>"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/puzzle/src/main/res/layout/activity_puzzle.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/bg_tangram_content` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        errorLine1="    android:background=&quot;@color/bg_tangram_content&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/tangram/src/main/res/layout/house_view.xml"
+            line="7"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="Overdraw"
+        message="Possible overdraw: Root element paints background `@color/bg_tangram_content` with a theme that also paints a background (inferred theme is `@style/AppTheme`)"
+        errorLine1="    android:background=&quot;@color/bg_tangram_content&quot;"
+        errorLine2="    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/tangram/src/main/res/layout/tangram_view.xml"
+            line="6"
+            column="5"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.progress_bar_w_h` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;progress_bar_w_h&quot;>48dip&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/dimens.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.progress_bar_small_w_h` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;progress_bar_small_w_h&quot;>16dip&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/dimens.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.progress_bar_large_w_h` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;progress_bar_large_w_h&quot;>76dip&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/dimens.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.drawable_padding_twice` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;drawable_padding_twice&quot;>10dip&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/dimens.xml"
+            line="16"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m9` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m9&quot;>5sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="5"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m8` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m8&quot;>6sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="6"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m7` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m7&quot;>7sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="7"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m6` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m6&quot;>8sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="8"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m5` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m5&quot;>9sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="9"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m4` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m4&quot;>10sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="10"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m3` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m3&quot;>11sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="11"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m2` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m2&quot;>12sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="12"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_m1` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_m1&quot;>13sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="13"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_normal` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_normal&quot;>14sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="16"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p1` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p1&quot;>15sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="19"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p2` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p2&quot;>16sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="20"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p5` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p5&quot;>19sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="23"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p6` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p6&quot;>20sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="24"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p7` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p7&quot;>21sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="25"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p8` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p8&quot;>22sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="26"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p9` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p9&quot;>23sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="27"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p10` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p10&quot;>24sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="28"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p11` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p11&quot;>25sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="29"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p12` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p12&quot;>26sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="30"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p13` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p13&quot;>27sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="31"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p15` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p15&quot;>29sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="33"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.dimen.font_size_p16` appears to be unused"
+        errorLine1="    &lt;dimen name=&quot;font_size_p16&quot;>30sp&lt;/dimen>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/fonts.xml"
+            line="34"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher` appears to be unused">
+        <location
+            file="src/main/res/drawable-v24/ic_launcher.png"/>
+        <location
+            file="src/main/res/drawable-xhdpi/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_background` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable/ic_launcher_background.xml"
+            line="2"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.ic_launcher_foreground` appears to be unused"
+        errorLine1="&lt;vector xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^">
+        <location
+            file="src/main/res/drawable-v24/ic_launcher_foreground.xml"
+            line="1"
+            column="1"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_1` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_1.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_2` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_2.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_3` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_3.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_4` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_4.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_5` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_5.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_6` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_6.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_7` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_7.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.drawable.img_8` appears to be unused">
+        <location
+            file="../sources/fifteen/src/main/res/drawable-xhdpi/img_8.png"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.button_single_line` appears to be unused"
+        errorLine1="    &lt;style name=&quot;button.single_line&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/styles.xml"
+            line="26"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.button_double_line` appears to be unused"
+        errorLine1="    &lt;style name=&quot;button.double_line&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/styles.xml"
+            line="31"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.button_transparent_double_line` appears to be unused"
+        errorLine1="    &lt;style name=&quot;button.transparent.double_line&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="../sources/core_api/src/main/res/values/styles.xml"
+            line="47"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="IconDuplicatesConfig"
+        message="The `ic_launcher.png` icon has identical contents in the following configuration folders: drawable-v24, drawable-xhdpi">
+        <location
+            file="src/main/res/drawable-xhdpi/ic_launcher.png"/>
+        <location
+            file="src/main/res/drawable-v24/ic_launcher.png"/>
+    </issue>
+
+    <issue
+        id="IconMissingDensityFolder"
+        message="Missing density variation folders in `src/main/res`: drawable-hdpi, drawable-mdpi, drawable-xxhdpi">
+        <location
+            file="src/main/res"/>
+    </issue>
+
+</issues>
