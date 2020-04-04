@@ -5,11 +5,9 @@ import ru.bazalikova.fifteen.data.Cell
 import ru.bazalikova.fifteen.data.Game
 import javax.inject.Inject
 
-class FifteenPresenter @Inject constructor() {
+class FifteenPresenter @Inject constructor(private val game: Game) {
     private var view: IFifteenView? = null
     private var mediator: IFifteenMediator? = null
-
-    private val game: Game= Game()
 
     fun attachView(view: IFifteenView)
     {
