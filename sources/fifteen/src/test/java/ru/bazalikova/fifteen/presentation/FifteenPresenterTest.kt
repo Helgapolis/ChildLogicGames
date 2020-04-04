@@ -8,7 +8,9 @@ import org.mockito.junit.MockitoJUnit
 import org.mockito.junit.MockitoRule
 import ru.bazalikova.fifteen.data.Cell
 import ru.bazalikova.fifteen.data.FifteenFieldHelper
-import ru.bazalikova.fifteen.data.Game
+import ru.bazalikova.fifteen.domain.CheckGameOverUseCase
+import ru.bazalikova.fifteen.domain.GetRandomFieldUseCase
+import ru.bazalikova.fifteen.domain.MoveToCellUseCase
 
 class FifteenPresenterTest {
 
@@ -18,41 +20,49 @@ class FifteenPresenterTest {
     @Mock
     lateinit var view: IFifteenView
 
-    private lateinit var game: Game
+    @Mock
+    lateinit var getRandomFieldUseCase: GetRandomFieldUseCase
 
-    private lateinit var  presenter: FifteenPresenter
+    @Mock
+    lateinit var moveToCellUseCase: MoveToCellUseCase
+
+    @Mock
+    lateinit var checkGameOverUseCase: CheckGameOverUseCase
+
+    private lateinit var presenter: FifteenPresenter
 
     @Test
     fun `field should be set after view is created`() {
-        game = Game()
-        presenter = FifteenPresenter(game)
+        val expectedField = FifteenFieldHelper.testFifteenField()
+        Mockito.`when`(getRandomFieldUseCase.invoke(Mockito.anyInt())).thenReturn(expectedField)
+
+        presenter = FifteenPresenter(getRandomFieldUseCase, moveToCellUseCase, checkGameOverUseCase)
         presenter.attachView(view)
         presenter.onViewCreated()
 
-        Mockito.verify(view).setField(game.field)
+        Mockito.verify(view).setField(expectedField)
     }
 
     @Test
     fun `move second field to new position - and check that field is updated`() {
-        game = Game()
-        presenter = FifteenPresenter(game)
+        val testField = FifteenFieldHelper.testFifteenField()
+        Mockito.`when`(getRandomFieldUseCase.invoke(Mockito.anyInt())).thenReturn(testField)
+        Mockito.`when`(moveToCellUseCase.invoke(testField, 0, 1)).thenReturn(true)
+
+        presenter = FifteenPresenter(getRandomFieldUseCase, moveToCellUseCase, checkGameOverUseCase)
         presenter.attachView(view)
         presenter.onViewCreated()
 
-        game.field = FifteenFieldHelper.testFifteenField()
-
         presenter.move(Cell(0, 1))
 
-        Mockito.verify(view).setField(game.field)
+        Mockito.verify(view, Mockito.times(2)).setField(testField)
     }
 
     @Test
     fun `click on repeat button - and check that repeat button came invisible`() {
-        game = Game()
-        presenter = FifteenPresenter(game)
+        presenter = FifteenPresenter(getRandomFieldUseCase, moveToCellUseCase, checkGameOverUseCase)
         presenter.attachView(view)
         presenter.onViewCreated()
-        game.field = FifteenFieldHelper.sortedFifteenField()
 
         presenter.onRepeatButtonClick()
 
@@ -61,11 +71,9 @@ class FifteenPresenterTest {
 
     @Test
     fun `click on repeat button - and check that game over button came invisible`() {
-        game = Game()
-        presenter = FifteenPresenter(game)
+        presenter = FifteenPresenter(getRandomFieldUseCase, moveToCellUseCase, checkGameOverUseCase)
         presenter.attachView(view)
         presenter.onViewCreated()
-        game.field = FifteenFieldHelper.sortedFifteenField()
 
         presenter.onRepeatButtonClick()
 
@@ -74,14 +82,15 @@ class FifteenPresenterTest {
 
     @Test
     fun `click on repeat button - and check that field is updated`() {
-        game = Game()
-        presenter = FifteenPresenter(game)
+        val expectedField = FifteenFieldHelper.testFifteenField()
+        Mockito.`when`(getRandomFieldUseCase.invoke(Mockito.anyInt())).thenReturn(expectedField)
+
+        presenter = FifteenPresenter(getRandomFieldUseCase, moveToCellUseCase, checkGameOverUseCase)
         presenter.attachView(view)
         presenter.onViewCreated()
-        game.field = FifteenFieldHelper.sortedFifteenField()
 
         presenter.onRepeatButtonClick()
 
-        Mockito.verify(view).setField(game.field)
+        Mockito.verify(view, Mockito.times(2)).setField(expectedField)
     }
 }
